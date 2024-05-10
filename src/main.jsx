@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import router from './Routs/Routs.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
+import { Toaster } from 'react-hot-toast';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   <AuthProvider>
   <RouterProvider router={router} />
+  <Toaster></Toaster>
   </AuthProvider>
    
  

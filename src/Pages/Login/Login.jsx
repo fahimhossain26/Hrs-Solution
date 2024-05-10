@@ -1,17 +1,55 @@
 
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 
 const Login = () => {
+  const  navigate=useNavigate()
+  const { signIn,
+    signInWithGoogle}=useContext(AuthContext)
+    //google sighn in 
+  
+     const handelGoogleSignin=async()=>{
+    try{
+      await signInWithGoogle()
+      toast.success('sign in sucess full')
+      navigate('/')
+    }
+    catch(err){
+      console.log(err);
+      toast.error(err?.message)
+    }
+     }
+    //email password signin
+    const handelSignin=async e =>{
+      e.preventDefault()
+      const form=e.target 
+      const email=form.email.value
+      const pass=form.password.value
+      console.log({email, pass})
+      try {
+        //user login
+        const result=await signIn(email,pass)
+        console.log(result);
+        navigate('/')
+      }
+      catch (err){
+        console.log(err);
+        toast.error(err?.message)
+      }
+    }
+
     return (
        
-              <div className='flex justify-center items-center min-h-[calc(100vh-306px)]'>
-                <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl '>
+              <div className='flex justify-center items-center min-h-[calc(100vh-306px)] mt-10'>
+                <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-2xl shadow-orange-700 lg:max-w-4xl '>
                   <div
                     className='hidden bg-cover bg-center lg:block lg:w-1/2'
                     style={{
-                      backgroundImage: `url('https://i.postimg.cc/P5pCSQTg/faq-img.webp')`,
+                      backgroundImage: `url('https://i.postimg.cc/Hxxn7wZv/giphy-1.gif')`,
                     }}
                   >  
                
@@ -19,18 +57,20 @@ const Login = () => {
           
                   <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
                     <div className='flex justify-center mx-auto'>
+                        
                       <img
-                        className='w-auto h-7 sm:h-8'
-                        src='https://merakiui.com/images/logo.svg'
+                        className='w-auto h-20 sm:h-16'
+                        src='https://i.postimg.cc/RFNgNfvv/Blue-And-White-Cleaning-Services-Logo-removebg-preview.png'
                         alt=''
                       />
+                     
                     </div>
           
                     <p className='mt-3 text-xl text-center text-gray-600 '>
                       Welcome back!
                     </p>
           
-                    <div className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
+                    <div onClick={handelGoogleSignin} className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 '>
                       <div className='px-4 py-2'>
                         <svg className='w-6 h-6' viewBox='0 0 40 40'>
                           <path
@@ -66,7 +106,7 @@ const Login = () => {
           
                       <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
                     </div>
-                    <form>
+                    <form onSubmit={handelSignin}>
                       <div className='mt-4'>
                         <label
                           className='block mb-2 text-sm font-medium text-gray-600 '
@@ -115,7 +155,7 @@ const Login = () => {
                       <span className='w-1/5 border-b  md:w-1/4'></span>
           
                       <Link
-                        to='/registration'
+                        to='/register'
                         className='text-xs text-gray-500 uppercase  hover:underline'
                       >
                         or sign up
