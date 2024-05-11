@@ -4,6 +4,7 @@ import Home from "../Pages/Home/home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ServicecDetails from "../Pages/serviceDetails/ServicecDetails";
+import AddService from "../Pages/addService/AddService";
 
 
 
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        // loader:()=>fetch(`${import.meta.env.VITE_API_URL}/allService`)
+       
       },
       {
        path:'/login',
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
         path: '/services/:id',
         element:<ServicecDetails></ServicecDetails>,
        loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/services/${params.id}`)   
-       
+       },
+       {
+        path:'/add-service',
+        element:<AddService></AddService>
+
        }
     
 

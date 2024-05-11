@@ -118,34 +118,30 @@ const Navber = () => {
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-3">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[50] p-2 shadow bg-base-100 rounded-box w-52 gap-3">
             <li className=" p-1 rounded-xl  bg-slate-300">
               <Link to={'/'}> <div>Home</div></Link>
             </li>
-            {/* <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li> */}
+         
             {
               user && (
                 <li>
                   <a>Dashbord</a>
                   <ul className="p-2">
                     <li>
-                      <div className='justify-between '>Add Service</div>
+                      <Link to={'/add-service'} className='justify-between '>Add Service</Link>
                     </li>
                     <li>
-                      <div>Manage Service</div>
+                      <Link to={'/manage-service'}>Manage Service</Link>
                     </li>
                     <li>
-                      <div>Booked-Services</div>
+                      <Link to={'/booked-service'}>Booked-Services</Link>
                     </li>
                     <li>
-                      <div>Service-To-Do</div>
+                      <Link to={'/service-todo'}>Service-To-Do</Link>
                     </li>
+                    
+                    
                   </ul>
                 </li>
               )
@@ -182,17 +178,17 @@ const Navber = () => {
                 <div tabIndex={0} role="button" className="btn   rounded-xl  bg-slate-300 ">Dashboard</div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                   <li>
-                    <div className='justify-between '>Add Service</div>
+                    <Link to={'/add-service'} className='justify-between '>Add Service</Link>
                   </li>
                   <li>
-                    <div>Manage Service</div>
-                  </li>
-                  <li>
-                    <div>Booked-Services</div>
-                  </li>
-                  <li>
-                    <div>Service-To-Do</div>
-                  </li>
+                      <Link to={'/manage-service'}>Manage Service</Link>
+                    </li>
+                    <li>
+                      <Link to={'/booked-service'}>Booked-Services</Link>
+                    </li>
+                    <li>
+                      <Link to={'/service-todo'}>Service-To-Do</Link>
+                    </li>
                 </ul>
               </div>
             )

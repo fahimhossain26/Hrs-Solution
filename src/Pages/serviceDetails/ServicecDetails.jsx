@@ -1,14 +1,42 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import Modal from "../../Components/modal/Modal";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 
 const ServicecDetails = () => {
-    
+  const [startDate, setStartDate] = useState(new Date());
     const {user}= useContext(AuthContext)
     const services = useLoaderData()
-    const { _id, price, name, description } = services
+    const { _id, price, name, description,buyer_email} = services
+
+    const handelFromSubmit=async e =>{
+      if(uer?.email===buyer_email) return toast.error('action not permited')
+      e.preventDefault()
+      const form=e.target
+      const jobId=_id
+      const price=parseFloat(form.price.value)
+      const comment=form.comment.value
+      const email=form.email.value
+      const deadline=startDate
+      // const buyer_email=buyer_email
+      const status='pending'
+
+      const bookedData={
+        jobId, price, comment,email,status,buyer_email,deadline
+      }
+      // console.table(bookedData);
+      try{
+        const{data}=await axios.post(`${import.meta.env.VITE_API_URL}/booked`,bookedData)
+        console.log(data);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
 
     return (
         <div className='flex flex-col md:flex-row justify-around gap-5  items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto '>
@@ -60,7 +88,7 @@ const ServicecDetails = () => {
                     book Now     
                 </h2>
 
-                <form>
+                <form onSubmit={handelFromSubmit}>
           <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
             <div>
               <label className='text-gray-700 ' htmlFor='price'>
@@ -70,6 +98,8 @@ const ServicecDetails = () => {
                 id='price'
                 type='text'
                 name='price'
+                defaultValue={price}
+                disabled
                
                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
               />
@@ -83,6 +113,7 @@ const ServicecDetails = () => {
                 id='emailAddress'
                 type='email'
                 name='email'
+                defaultValue={user?.email}
                 disabled
                 
                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
@@ -104,13 +135,14 @@ const ServicecDetails = () => {
               <label className='text-gray-700'>Deadline</label>
 
               {/* Date Picker Input Field */}
+              <DatePicker className="border p-2 px-6 rounded-md" selected={startDate} onChange={(date) => setStartDate(date)} />
             </div>
           </div>
 
           <div className='flex justify-end mt-6'>
             <button
               type='submit'
-              className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'
+              className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 btn-block'
             >
               Place Bid
             </button>
