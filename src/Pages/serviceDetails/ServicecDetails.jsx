@@ -12,7 +12,7 @@ const ServicecDetails = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext)
   const services = useLoaderData()
-  const { _id, service_name, price, name, description, photoURL, buyer } = services
+  const { _id, service_name, price, name, description, photoURL, buyer,service_area } = services
 
   const handelFromSubmit = async e => {
     e.preventDefault()
@@ -57,20 +57,21 @@ const ServicecDetails = () => {
         </div>
 
         <div>
-          <h1 className='mt-2 text-3xl font-semibold text-gray-800 '>
-            {service_name}
+          <h1 className='mt-2 text-3xl font-semibold text-gray-800  mb-4 text-center'>
+          {service_name}
 
 
-            <img src={photoURL} alt="" />
+          
 
           </h1>
-          <h2>details Price: {price}</h2>
+          <img className="h-96 w-auto" src={photoURL} alt="" />
+          
 
           <p className='mt-2 text-lg text-gray-600 '>
             {description}
           </p>
           <p className='mt-6 text-sm font-bold text-gray-600 '>
-            Buyer Details:
+          Service Provider Information:
           </p>
           <div className='flex items-center gap-5'>
             <div>
@@ -83,9 +84,13 @@ const ServicecDetails = () => {
               <img src={buyer?.photo} alt='' />
             </div>
           </div>
-          <p className='mt-6 text-lg font-bold text-gray-600 '>
-            Range: $100 - $150
+          <p className=' text-lg font-bold text-gray-600 '>
+            Service Area :{service_area}
           </p>
+          <p className='mt-6 text-lg font-bold text-gray-600 '>
+            Price:{price}$
+          </p>
+          
         </div>
       </div>
       {/* Place A Bid Form */}

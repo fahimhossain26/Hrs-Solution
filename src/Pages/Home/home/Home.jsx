@@ -9,6 +9,7 @@ const Home = () => {
         <div>
             <h2 className="text-3xl font-pops">This is home </h2>
             <Carosol></Carosol>
+            
             <ServiceCards></ServiceCards>
         </div>
     );
