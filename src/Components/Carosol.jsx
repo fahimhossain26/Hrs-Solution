@@ -16,7 +16,7 @@ import Slider from './Slider';
 
 import bgi1 from '../assets/banner/img1.jpg'
 import bgi2 from '../assets/banner/img2.jpg'
-// import bgi3 from '../assets/banner/img3.jpg'
+import bgi3 from '../assets/banner/img3.png'
 import bgi4 from '../assets/banner/img4.jpg'
 export default function Carosol() {
     
@@ -43,7 +43,7 @@ export default function Carosol() {
             <Slider image={bgi1} text='get your home repair service 1 hours '/>
             </SwiperSlide>
         <SwiperSlide>
-        <Slider image={bgi2}/>
+        <Slider image={bgi3}/>
         </SwiperSlide>
 
         <SwiperSlide>

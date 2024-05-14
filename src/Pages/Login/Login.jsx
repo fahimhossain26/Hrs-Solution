@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
   const location=useLocation()
-  const form=location.state || '/'
+  const from=location.state || '/'
   const  navigate=useNavigate()
   const { signIn,signInWithGoogle}=useContext(AuthContext)
     //google sighn in 
@@ -17,7 +17,7 @@ const Login = () => {
     try{
       await signInWithGoogle()
       toast.success('sign in sucess full')
-      navigate(form,{replace:true})
+      navigate(from,{replace:true})
     }
     catch(err){
       console.log(err);
@@ -35,7 +35,7 @@ const Login = () => {
         //user login
         const result=await signIn(email,pass)
         console.log(result);
-        navigate(form,{replace:true})
+        navigate(from,{replace:true})
       }
       catch (err){
         console.log(err);

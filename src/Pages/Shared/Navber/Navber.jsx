@@ -7,111 +7,6 @@ const Navber = () => {
   const { user, logOut } = useContext(AuthContext)
   return (
 
-    // <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
-    //   <div className='flex-1'>
-    //     <div className='flex gap-1 items-center '>
-    //       <img className='w-auto h-16' src='https://i.postimg.cc/RFNgNfvv/Blue-And-White-Cleaning-Services-Logo-removebg-preview.png' alt='' />
-    //       <span className='font-bold '>HRS soution</span>
-    //     </div>
-    //   </div>
-    //   <div className='flex-none'>
-    //     <ul className='menu menu-horizontal px-1  font-pops gap-3'>
-    //       <li>
-    //         <Link to={'/'}> <div>Home</div></Link>
-    //       </li>
-    //       <li>
-    //         <Link to={'/'}> <div>service</div></Link>
-    //       </li>
-
-    //       {/* dropdown */}
-    // {
-    //   user && (
-    //     <div className="dropdown dropdown-hover">
-    //     <div tabIndex={0} role="button" className="btn m-1">Dashboard</div>
-    //     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-    //     <li>
-    //           <div className='justify-between '>Add Service</div>
-    //         </li>
-    //         <li>
-    //           <div>Manage Service</div>
-    //         </li>
-    //         <li>
-    //           <div>Booked-Services</div>
-    //         </li>
-    //         <li>
-    //           <div>Service-To-Do</div>
-    //         </li>
-    //     </ul>
-    //   </div>
-    //    )
-    // }
-
-
-
-
-    // {
-    //   !user && (
-    //     <li>
-    //       <Link to={'/login'}> <div>Login</div></Link>
-    //     </li>)
-    // }
-
-    //     </ul>
-
-    // {
-    //   user && (
-    //     <div className='dropdown dropdown-end z-50'>
-    //       <div
-    //         tabIndex={0}
-    //         role='button'
-    //         className='btn btn-ghost btn-circle avatar'
-    //       >
-    //         <div className='w-10 rounded-full' title={user?.displayName}>
-    //           <img
-    //             referrerPolicy='no-referrer'
-    //             alt='User Profile Photo'
-    //             src={user?.photoURL}
-    //           />
-    //         </div>
-    //       </div>
-    //       <ul
-    //         tabIndex={0}
-    //         className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 '
-    //       >
-    //         {/* <li>
-    //           <div className='justify-between '>Add Service</div>
-    //         </li>
-    //         <li>
-    //           <div>Manage Service</div>
-    //         </li>
-    //         <li>
-    //           <div>Booked-Services</div>
-    //         </li>
-    //         <li>
-    //           <div>Service-To-Do</div>
-    //         </li> */}
-
-    //               <li>
-    //           <div>{user?.email}</div>
-    //         </li> 
-    //         <li className='mt-2'>
-    //           <button onClick={logOut} className='bg-gray-200 block text-center'>Logout</button>
-    //         </li>
-    //       </ul>
-    //     </div>
-    //   )
-    // }
-    //   </div>
-    // </div>
-
-
-
-
-
-
-
-
-
     <div className="navbar bg-base-100  px-4 mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
@@ -121,6 +16,10 @@ const Navber = () => {
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[50] p-2 shadow bg-base-100 rounded-box w-52 gap-3">
             <li className=" p-1 rounded-xl  bg-slate-300">
               <Link to={'/'}> <div>Home</div></Link>
+            </li>
+            
+            <li>
+              <Link to={'/allServices'}> <div>All Services</div></Link>
             </li>
          
             {
@@ -170,6 +69,9 @@ const Navber = () => {
           <li className=" p-1 rounded-xl  bg-slate-300">
             <Link to={'/'}> <div>Home</div></Link>
           </li>
+          <li className="btn   rounded-xl  bg-slate-300 ">
+              <Link to={'/allServices'}> <div>All Services</div></Link>
+            </li>
 
 
           {

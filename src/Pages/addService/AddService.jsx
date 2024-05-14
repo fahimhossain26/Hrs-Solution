@@ -16,12 +16,12 @@ const AddService = () => {
         const price=parseFloat(form.price.value)
         const service_area=form.service_area.value
         const description=form.description.value
-        // const email=user?.email
+         const email=user?.email
         // const name=user?.displayName
         // const photo=user?.photoURL
 
         const addServiceData={
-           service_name,  photoURL,price,service_area,description,
+           service_name,  photoURL,price,service_area,description, email,
              buyer: {email:user?.email,
                   name:user?.displayName,
                   photo:user?.photoURL

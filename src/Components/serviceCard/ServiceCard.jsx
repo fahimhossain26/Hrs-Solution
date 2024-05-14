@@ -16,6 +16,7 @@ const ServiceCard = ({ service }) => {
           <img src={buyer?.photo} alt='' />
         </div>
       <div> <p>{buyer?.name}</p></div>
+      
        
       </div>
         <div className="">

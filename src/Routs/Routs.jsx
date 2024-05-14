@@ -11,6 +11,7 @@ import UpdateService from "../Pages/updateService/UpdateService";
 import PrivateRouts from "./PrivateRouts";
 import BookedService from "../Pages/bookedService/BookedService";
 import ServiceTodo from "../Pages/service-todo/ServiceTodo";
+import AllServices from "../Pages/allServices/AllServices";
 
 
 
@@ -66,6 +67,13 @@ const router = createBrowserRouter([
         element:<PrivateRouts>
           <ServiceTodo></ServiceTodo>
         </PrivateRouts>
+
+       },
+       {
+        path:'/allServices',
+        element:
+          <AllServices></AllServices>
+       
 
        },
        

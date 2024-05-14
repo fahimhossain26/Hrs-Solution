@@ -23,13 +23,13 @@ const ServicecDetails = () => {
     const jobId = _id
     const price = parseFloat(form.price.value)
     const comment = form.comment.value
-    const email = form.email.value
+    const email =  user?.email                   
     const deadline = startDate
     // const buyer_email=buyer_email
     const status = 'pending'
 
     const bookedData = {
-      service_name, jobId, price, comment, email, status, deadline, buyer_email: buyer?.email
+      service_name, jobId, price, comment, email,status, deadline, buyer_email: buyer?.email
     }
     // console.table(bookedData);
     try {

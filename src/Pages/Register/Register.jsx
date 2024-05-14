@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 const Register = () => {
   const location=useLocation()
-  const form=location.state || '/'
+  const from=location.state || '/'
   const navigate=useNavigate();
   const {  user,
     setUser,
@@ -24,7 +24,7 @@ const Register = () => {
         try{
           await signInWithGoogle()
           toast.success('sign in sucessfull')
-         navigate(form,{replace:true})
+         navigate(from,{replace:true})
         }
         catch(err){
           console.log(err);
@@ -46,7 +46,7 @@ const Register = () => {
             console.log(result);
             await updateUserProfile(name,photo)
             setUser({...user,photoURL:photo,displayName:name})
-            navigate(form,{replace:true})
+            navigate(from,{replace:true})
             toast.success('signUp successfully ')
             
           }
