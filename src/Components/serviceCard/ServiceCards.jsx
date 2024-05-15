@@ -14,7 +14,7 @@ const ServiceCards = () => {
    },[])
     return (
         <div className=' px-4 mx-auto '>
-            <h2 className="text-5xl">Service are here </h2>
+            <h2 className="text-5xl text-center mb-10 font-mono  text-blue-700">Popular Services </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
                 {/* {

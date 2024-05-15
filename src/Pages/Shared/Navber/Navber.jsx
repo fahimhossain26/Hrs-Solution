@@ -77,14 +77,14 @@ const Navber = () => {
         <div className='flex-1'>
           <div className='flex gap-1 items-center '>
             <img className='w-auto h-16' src='https://i.postimg.cc/RFNgNfvv/Blue-And-White-Cleaning-Services-Logo-removebg-preview.png' alt='' />
-            <span className='font-bold '><span className="text-orange-500 text-xl">HRS-</span>soution</span>
+            <span className='font-bold '><span className="text-orange-500 text-xl">HRS-</span>Soution</span>
           </div>
         </div>
 
       </div>
       <div className="navbar-center hidden lg:flex  ">
         <ul className="menu menu-horizontal px-1 gap-2 ">
-          <li className=" p-1 rounded-xl  bg-slate-300">
+          <li className=" p-1 rounded-xl btn bg-slate-300">
             <Link to={'/'}> <div>Home</div></Link>
           </li>
           <li className="btn   rounded-xl  bg-slate-300 ">

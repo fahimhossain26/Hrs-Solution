@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <h2 className="text-3xl font-pops">This is home </h2>
-            <Carosol></Carosol>
+           <div className="mt-10"> <Carosol></Carosol></div>
             
             <ServiceCards></ServiceCards>
             <Chouse></Chouse>

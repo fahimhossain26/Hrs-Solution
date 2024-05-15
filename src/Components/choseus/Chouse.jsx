@@ -2,6 +2,7 @@ import  { useEffect } from 'react';
 
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import { Link } from 'react-router-dom';
 const Chouse = () => {
     
     useEffect(()=>{
@@ -15,15 +16,13 @@ const Chouse = () => {
       <div className="max-w-md md:space-y-6 sm:space-y-5 space-y-4 " data-aos="fade-right">
         <h1 className="lg:text-5xl sm:text-4xl text-3xl font-bold leading-tight text-gray-900">Take your home service to the next level.</h1>
         <p className="lg:text-lg sm:text-base text-sm text-gray-600">
-        home cleaning to finding a handyman near me, Handy is your source for home services. Instantly book competitively priced home services and get quotes 
+       HRS solution is a Home Repair service and  cleaning to finding a handyman near me, Handy is your source for home services. Instantly book competitively priced home services and get quotes 
         </p>
         <div className="flex space-x-4">
-          <button className="inline-flex flex-nowrap items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-blue-600 text-white">
-            Get Started
-          </button>
-          <button className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-transparent text-blue-600">
-            Learn More
-          </button>
+          <Link to={'/allServices'} className="inline-flex flex-nowrap items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-blue-600 text-white">
+            View Services 
+          </Link>
+          
         </div>
         <p className="text-sm text-gray-500">Trusted by 5000+ Users</p>
       </div>

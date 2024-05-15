@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import toast from "react-hot-toast";
+// import Modal from "../../Components/modal/Modal";
 
 
 const ServicecDetails = () => {
@@ -46,14 +47,12 @@ const ServicecDetails = () => {
   return (
     <div className='flex flex-col md:flex-row justify-around gap-5  items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto '>
       {/* Job Details */}
-      <div className='flex-1  px-4 py-7 bg-white rounded-md shadow-md md:min-h-[350px]'>
+      <div className='flex-1  px-4 py-7 bg-white rounded-md shadow-md md:min-h-[350px] mt-20'>
         <div className='flex items-center justify-between'>
           <span className='text-sm font-light text-gray-800 '>
 
           </span>
-          <span className='px-4 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full '>
-            Web Development
-          </span>
+        
         </div>
 
         <div>
@@ -94,16 +93,16 @@ const ServicecDetails = () => {
         </div>
       </div>
       {/* Place A Bid Form */}
-      <section className='p-6 w-full  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]'>
-        <h2 className='text-lg font-semibold text-gray-700 capitalize '>
+      <section className='p-6 w-full  bg-white rounded-md shadow-md flex-1 md:min-h-[350px] bg-blue-400'>
+        <h2 className='text-2xl font-semibold text-gray-700 capitalize text-center text-white '>
           book Now
         </h2>
 
         <form onSubmit={handelFromSubmit}>
           <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
             <div>
-              <label className='text-gray-700 ' htmlFor='price'>
-                Price
+              <label className='text-black font-bold font-pops ' htmlFor='price'>
+                Price$
               </label>
               <input
                 id='price'
@@ -117,7 +116,7 @@ const ServicecDetails = () => {
             </div>
 
             <div>
-              <label className='text-gray-700 ' htmlFor='emailAddress'>
+              <label className='text-black font-bold font-pops' htmlFor='emailAddress'>
                 Email Address
               </label>
               <input
@@ -132,8 +131,8 @@ const ServicecDetails = () => {
             </div>
 
             <div>
-              <label className='text-gray-700 ' htmlFor='comment'>
-                Comment
+              <label className='text-black font-bold font-pops ' htmlFor='comment'>
+              Special instruction 
               </label>
               <input
                 id='comment'
@@ -143,7 +142,7 @@ const ServicecDetails = () => {
               />
             </div>
             <div className='flex flex-col gap-2 '>
-              <label className='text-gray-700'>Deadline</label>
+              <label className='text-black font-bold font-pops'>Deadline</label>
 
               {/* Date Picker Input Field */}
               <DatePicker className="border p-2 px-6 rounded-md" selected={startDate} onChange={(date) => setStartDate(date)} />
@@ -153,7 +152,7 @@ const ServicecDetails = () => {
           <div className='flex justify-end mt-6'>
             <button
               type='submit'
-              className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 btn-block'
+              className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-blue-800 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 btn-block'
             >
               Place Bid
             </button>
@@ -162,7 +161,7 @@ const ServicecDetails = () => {
         </form>
 
 
-
+        {/* <Modal></Modal> */}
       </section>
     </div>
   );
