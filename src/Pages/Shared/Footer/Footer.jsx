@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
@@ -13,13 +14,13 @@ const Footer = () => {
                 <nav className="text-lg">
                     <ul className="space-y-3">
                         <li>
-                            <a className="cursor-pointer hover:underline">Home</a>
+                          <Link to={'/'}>  <a className="cursor-pointer hover:underline">Home</a></Link>
                         </li>
                         <li>
-                            <a className="cursor-pointer hover:underline">Contact</a>
+                           <Link to={'/allServices'}> <a className="cursor-pointer hover:underline">ALl Service</a></Link>
                         </li>
                         <li>
-                            <a className="cursor-pointer hover:underline">About</a>
+                        <Link to={'/login'}>  <a className="cursor-pointer hover:underline">Login</a></Link>
                         </li>
                     </ul>
                 </nav>
@@ -37,7 +38,7 @@ const Footer = () => {
                     </ul>
                 </nav>
             </div>
-            <aside className="bg-sky-100 py-5 text-center text-sm">
+            <aside className="bg-sky-200 py-5 text-center text-sm">
                 <p>&copy; 2024 HRS solution. All Rights Reserved.</p>
             </aside>
         </footer>
