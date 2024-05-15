@@ -43,11 +43,11 @@ export default function Carosol() {
             <Slider image={bgi1} text='get your home repair service 1 hours '/>
             </SwiperSlide>
         <SwiperSlide>
-        <Slider image={bgi3}/>
+        <Slider image={bgi3}  text='We will fi any kind of home applience problem  '/>
         </SwiperSlide>
 
         <SwiperSlide>
-        <Slider image={bgi4}/>
+        <Slider image={bgi4}  text='we work sefaly and solve your problem easyly '/>
         </SwiperSlide>
         
 
