@@ -49,11 +49,7 @@ export default function Carosol() {
         <SwiperSlide>
         <Slider image={bgi4}  text='we work sefaly and solve your problem easyly '/>
         </SwiperSlide>
-        
-
-   
-      
-      
+     
       </Swiper>
     </div>
   );
