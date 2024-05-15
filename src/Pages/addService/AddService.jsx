@@ -40,8 +40,8 @@ const AddService = () => {
     }
 
     return (
-        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-            <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-2xl '>
+        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] '>
+            <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-2xl mt-36 mb-10  '>
                 <h2 className=' font-semibold text-gray-700 capitalize  text-center font-pops text-2xl'>
                     Add A Service
                 </h2>
